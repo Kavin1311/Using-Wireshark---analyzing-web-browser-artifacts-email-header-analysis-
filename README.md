@@ -26,6 +26,7 @@ Open Wireshark and start capturing on the active interface (Wi- Fi/Ethernet).
 Analyze Queries:
 # FILTER HTTP:
 
+![image](https://github.com/user-attachments/assets/da3033ec-490a-4464-8765-b0fadc31cecf)
 
 # FILTER TCP:
 ![image](https://github.com/user-attachments/assets/a79eefcc-07b7-4cb2-9be6-2931d2ae6c56)
