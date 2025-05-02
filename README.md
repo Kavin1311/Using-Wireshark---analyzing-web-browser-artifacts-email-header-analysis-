@@ -2,48 +2,49 @@
 # NAME:T.KAVINAJAI
 # REGISTER NO:212223100020
 
-# aim
-To capture and analyze network traffic using Wireshark in order to observe protocols, packets, and potential anomalies.
+# AIM:
+To use Wireshark to analyze web browser activities and inspect email headers from captured network traffic.
 
-## DESIGN STEPS:
-### Step 1:
-Install Wireshark using the command:
+# DESIGN STEPS:
+Step 1:
+Launch Wireshark and start capturing traffic on the appropriate network interface.
 
-### Step 2:
-Launch Wireshark and select the appropriate network interface for live traffic capture.
+Step 2:
+Use filters like http, dns, or tcp.port == 80 to monitor web browser artifacts such as visited URLs, cookies, and user-agent strings.
 
-### Step 3:
-Start the capture, apply filters (like http, tcp, ip.addr == x.x.x.x) to analyze specific traffic, and stop the capture after observing relevant data.
+Step 3:
+Apply filters like smtp, pop, or imap to locate and analyze email header details (e.g., sender, receiver, subject) from email communications.
 
-## PROCEDURE:
-Open Wireshark and Select a Network Interface • Launch Wireshark. • Select an active interface (like Wi-Fi or Ethernet) to start capturing packets.<br/>
+# PROGRAM:
+Wireshark Web and Email Traffic Filtering Steps
 
-Start Capturing Packets • Click the blue shark fin icon or double-click the interface. • Wireshark will start capturing all real-time traffic.<br/>
+# A. Capturing Traffic in Wireshark
+Open Wireshark and start capturing on the active interface (Wi- Fi/Ethernet).
+![image](https://github.com/user-attachments/assets/ff840227-4fb1-4302-95b3-9d42dc0be528)
 
-Apply Filters to Focus on Specific Traffic • Use filters like http, ip.addr == 192.168.1.1, or tcp.port == 80 in the top filter bar to narrow down results.<br/>
+# Analyzing Web Browser Artifacts
+Analyze Queries:
+# FILTER HTTP:
 
-Analyze Packet Details • Click on a packet to view its detailed breakdown including frame, Ethernet, IP, TCP/UDP layers, and data payload.<br/>
 
-Export or Save the Capture • Go to File > Save As to store the capture in .pcap format for future analysis.<br/>
+# FILTER TCP:
+![image](https://github.com/user-attachments/assets/a79eefcc-07b7-4cb2-9be6-2931d2ae6c56)
 
-## OUTPUT:
-# Open Wireshark and Select a Network Interface 
-![Screenshot 2025-04-28 102150](https://github.com/user-attachments/assets/d58486ef-f9e4-4a8a-bbc4-b2c64e35e218)
+# APPLY RELAVANT FILTERS TCP.PORT=443
+![Screenshot 2025-04-28 141058](https://github.com/user-attachments/assets/34a4cd95-76d4-4996-a955-f699871a6c09)
+![Screenshot 2025-04-28 141805](https://github.com/user-attachments/assets/a9d08cdd-dc1b-458a-afda-b2fa6e931c91)
+![Screenshot 2025-04-28 141832](https://github.com/user-attachments/assets/d38d82a1-b292-4390-b448-5a5f93304ad9)
+# DNS :
 
-# Start Capturing Packets
-![Screenshot 2025-04-28 102222](https://github.com/user-attachments/assets/f3305695-8fda-42d9-9c50-05f5c30a74ee)
+![Screenshot 2025-04-28 141004](https://github.com/user-attachments/assets/a58fa0a4-3125-4ed2-a257-a84c122cc43a)
 
-# Apply Filters to Focus on Specific Traffic
-![Screenshot 2025-04-28 102059](https://github.com/user-attachments/assets/3f2524ef-83d0-4732-8c29-9bef04c05e88)  
+# Locate email data
 
-# Analyze Packet Details
+Look for SMTP packets to see sender/receiver email addresses. Use "Follow TCP Stream" to view the full email headers and body if unencrypted.
 
-![Screenshot 2025-04-28 102222](https://github.com/user-attachments/assets/0be516a9-f78e-4ebf-9033-2f7171484ab4)
+# Extract Email Header Fields Analyze From, To, Subject, Date, Message-ID, and relay servers used in sending the email.
+Perform activities like opening a website or sending an email through a client (e.g., Gmail via browser or Thunderbird).
+![Screenshot 2025-04-28 141919](https://github.com/user-attachments/assets/836252c4-e1b0-44a8-9926-ac39e589e835)
 
-![Screenshot 2025-04-28 102336](https://github.com/user-attachments/assets/ff380c07-ab45-45d7-8874-6781e71f8e53)
+Stop the capture once done.
 
-# save and export the capture
-![Screenshot 2025-04-28 102415](https://github.com/user-attachments/assets/66c208c0-791f-467a-b2e3-3f4cf6dbb2ec)
-
-## RESULT:
-Network traffic was successfully captured and analyzed using Wireshark.
